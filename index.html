@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登陆／注册</title>
+
+    <link href="/bookWebsite/opensource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bookWebsite/opensource/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/bookWebsite/css/common/common.css" rel="stylesheet">
+    <link href="/bookWebsite/css/index.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="bg-img"></div>
+
+    <div class="container">
+      <p class="logo">东东网</p>
+      <p class="propogation">赛&nbsp;&nbsp;&nbsp;&nbsp;京&nbsp;&nbsp;&nbsp;&nbsp;东&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;战&nbsp;&nbsp;&nbsp;&nbsp;淘&nbsp;&nbsp;&nbsp;&nbsp;宝</p>
+      <!-- <img id="alpaca" src="/bookWebsite/image/index/alpaca.jpg">
+ -->      <div id="sign-and-log">
+        <div id="log-form" class="col-xs-6 col-xs-offset-3">
+          <form>
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="邮箱"  id="log-email">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" placeholder="密码" id="log-password">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-block btn-info" id="log-log-btn" onClick="return false;">登陆</button>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-block btn-success" id="log-sign-btn" onClick="return false;">注册</button>
+            </div>
+          </form>
+        </div>
+        <div id="sign-form" class="col-xs-6 col-xs-offset-3">
+          <form>            
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="注册邮箱" id="sign-email">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="用户名"  id="sign-name">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" placeholder="输入密码"  id="sign-password">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" placeholder="密码确认" id="sign-password-confirm">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-block btn-success" id="sign-sign-btn" onClick="return false;">注册</button>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-block btn-info" id="sign-log-btn" onClick="return false;">登陆</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/bookWebsite/opensource/bootstrap/js/jquery.js"></script>
+    <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
+    <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/bookWebsite/js/common/md5.js"></script>
+    <script src="/bookWebsite/js/index.js"></script>
+
+  </body>
+</html>

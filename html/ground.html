@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>书城</title>
+
+    <link href="/bookWebsite/opensource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bookWebsite/opensource/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/bookWebsite/css/common/common.css" rel="stylesheet">
+    <link href="/bookWebsite/css/common/header.css" rel="stylesheet">
+    <link href="/bookWebsite/css/ground.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="logo">
+          东东网
+        </div>
+        <div id="header-list">
+          <ul>
+            <li class="header-list-item active" id="type-0">购物广场</li>
+            <li class="header-list-item" id="type-1">我的主页</li>
+          </ul>
+          <canvas id="header-triangle" width="120" height="10"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="search-part">
+        <div class="col-xs-6">
+          <input class="form-control" id="search-input">
+          <button class="btn btn-info" id="input-btn">搜索</button>
+          <div id="recommend-part">
+            <span>热门搜索 :</span>
+            <ul>
+              <li>匆匆那年</li>
+              <li>计算机组成原理</li>
+              <li>数据库</li>
+            </ul>
+          </div>
+        </div>
+        <div id="specific-search">
+          高级搜索
+        </div>
+        <div id="trolley-part" class="pull-right">
+          <button class="btn btn-default btn-block"><i class="icon-shopping-cart"></i> 购物车 <span class="badge"></span></button>
+        </div>
+      </div>
+
+      <div id="specific-search-part">
+        <form id="search-condition-form" class="col-xs-8">
+          <div class="form-group">
+            <p class="col-xs-2">书名</p>
+            <div class="col-xs-10">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="col-xs-2">作者</p>
+            <div class="col-xs-10">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="col-xs-2">出版社</p>
+            <div class="col-xs-10">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="col-xs-2">价格</p>
+            <div class="col-xs-10">
+              <input type="number">
+              <i class="icon-minus"></i>
+              <input type="number">
+            </div>
+          </div>
+          <div class="form-group" id="pub-date-part">
+            <p class="col-xs-2">出版时间</p>
+            <div class="col-xs-10">
+              <div class="col-xs-5">
+                <div class="col-xs-6">
+                  <select class="form-control">
+                    <option>1992</option>
+                  </select>
+                </div>
+                <div class="col-xs-6">
+                  <select class="form-control">
+                    <option>1</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-1">
+                <i class="icon-minus"></i>
+              </div>
+              <div class="col-xs-5">
+                <div class="col-xs-6">
+                  <select class="form-control">
+                    <option>1993</option>
+                  </select>
+                </div>
+                <div class="col-xs-6">
+                  <select class="form-control">
+                    <option>4</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="col-xs-2">
+          <button class="btn btn-info btn-block" id="specific-search-btn">搜索</button>
+        </div>
+      </div>
+
+      <div id="catagory-part">
+        <div id="catagory-list">
+          <h2>这是第一个种类</h2>
+          <div id="type-0" class="catagory-type">
+            <div class="book-lg">
+              <img src="/bookWebsite/image/book/1/1.jpg">
+              <p>《看见》</p>
+              <p class="book-price">24.45元</p>
+            </div>
+            <div class="book-sm">
+              <img src="/bookWebsite/image/book/2/2.jpg">
+              <p>《看见》</p>
+              <p class="book-price">24.45元</p>
+            </div>
+            <div class="book-sm">
+              <img src="/bookWebsite/image/book/3/3.jpg">
+              <p>《看见》</p>
+              <p class="book-price">24.45元</p>
+            </div>
+            <div class="book-sm">
+              <img src="/bookWebsite/image/book/4/4.1.jpg">
+              <p>《看见》</p>
+              <p class="book-price">24.45元</p>
+            </div>
+            <div class="book-sm">
+              <img src="/bookWebsite/image/book/4/4.2.jpg">
+              <p>《看见》</p>
+              <p class="book-price">24.45元</p>
+            </div>
+          </div>
+          <div id="type-1" class="catagory-type">
+          </div>
+          <div id="type-2" class="catagory-type">
+          </div>
+          <div id="type-3" class="catagory-type">
+          </div>
+        </div>
+        <div id="information">
+
+        </div>
+      </div>
+    </div>
+
+    <script src="/bookWebsite/opensource/bootstrap/js/jquery.js"></script>
+    <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
+    <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/bookWebsite/js/common/header.js"></script>
+    <script src="/bookWebsite/js/common/isLogin.js"></script>
+    <script src="/bookWebsite/js/trolley.js"></script>
+    <script src="/bookWebsite/js/ground.js"></script>
+
+  </body>
+</html>

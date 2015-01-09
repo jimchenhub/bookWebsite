@@ -1,0 +1,26 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Microsoft YaHei, SimHei, SimSun, arial, Georgia;
+  background-color: #fafafa;
+  min-width: 980px;
+  word-wrap: break-word;
+}
+.container {
+  width: 980px !important;
+  padding: 0px;
+}
+
+/* 组件 */
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+a, li, img {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}

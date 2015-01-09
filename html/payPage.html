@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>付款</title>
+
+    <link href="/bookWebsite/opensource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bookWebsite/opensource/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/bookWebsite/css/common/common.css" rel="stylesheet">
+    <link href="/bookWebsite/css/common/header.css" rel="stylesheet">
+    <link href="/bookWebsite/css/payPage.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="logo">
+          东东网
+        </div>
+        <div id="header-list">
+          <ul>
+            <li class="header-list-item active" id="type-0">购物广场</li>
+            <li class="header-list-item" id="type-1">我的主页</li>
+          </ul>
+          <canvas id="header-triangle" width="120" height="10"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="procedure-part">
+        <div class="step-part">
+          <div class="line"></div>
+          <div class="circle">1</div>
+          <p>我的购物车</p>
+        </div>
+        <div class="step-part">
+          <div class="line"></div>
+          <div class="circle">2</div>
+          <p>填写核对订单信息</p>
+        </div>
+        <div class="step-part active">
+          <div class="line"></div>
+          <div class="circle">3</div>
+          <p>成功提交订单</p>
+        </div>
+      </div>
+      <div id="pay-list">
+        <div id="my-money">
+          <p>我的余额: <span class="remain-money">¥240</span></p>
+          <button class="btn btn-success pull-right" id="recharge-btn">去充值</button>
+        </div>
+        <div id="product-money">
+          <p class="pull-right">应付金额: <span class="pay-money">¥45.50</span></p>
+          <button class="btn btn-warning btn-block" id="pay-btn">付款</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/bookWebsite/opensource/bootstrap/js/jquery.js"></script>
+    <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
+    <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/bookWebsite/js/common/header.js"></script>
+    <script src="/bookWebsite/js/common/isLogin.js"></script>
+    <script src="/bookWebsite/js/payPage.js"></script>
+
+  </body>
+</html>

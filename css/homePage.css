@@ -1,0 +1,13 @@
+#left-part {
+  float: left;
+  width: 20%;
+  height: 400px;
+  background-color: red;
+}
+
+#right-part {
+    float: left;
+    width: 80%;
+    height: 1000px;
+    background-color: #ccc;
+}

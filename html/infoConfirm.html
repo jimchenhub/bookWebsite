@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>确认信息</title>
+
+    <link href="/bookWebsite/opensource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bookWebsite/opensource/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/bookWebsite/css/common/common.css" rel="stylesheet">
+    <link href="/bookWebsite/css/common/header.css" rel="stylesheet">
+    <link href="/bookWebsite/css/infoConfirm.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="logo">
+          东东网
+        </div>
+        <div id="header-list">
+          <ul>
+            <li class="header-list-item active" id="type-0">购物广场</li>
+            <li class="header-list-item" id="type-1">我的主页</li>
+          </ul>
+          <canvas id="header-triangle" width="120" height="10"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="procedure-part">
+        <div class="step-part">
+          <div class="line"></div>
+          <div class="circle">1</div>
+          <p>我的购物车</p>
+        </div>
+        <div class="step-part active">
+          <div class="line"></div>
+          <div class="circle">2</div>
+          <p>填写核对订单信息</p>
+        </div>
+        <div class="step-part">
+          <div class="line"></div>
+          <div class="circle">3</div>
+          <p>成功提交订单</p>
+        </div>
+      </div>
+      <div id="info-list">
+        <div class="info-head">
+          <p>填写并核对订单信息</p>
+        </div> 
+        <div id="info-people" class="basic-info-part">
+          <h4>收货人信息</h4>
+          <p>陈吕劼</p>
+          <p id="info-address">这个是你的送货地址</p>
+          <form class="col-xs-4" id="address-form">
+            <div class="form-group">
+              <input class="form-control" type="input" placeholder="详细地址">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary pull-right">增加送货地址</button>
+            </div>
+          </form>
+        </div>  
+        <div id="info-payment" class="basic-info-part">
+          <h4>支付方式及配送</h4>
+          <p>余额付款</p>
+          <p>预计 12月23号 送达</p>
+        </div>  
+        <div id="info-booklist">
+          <h4 class="pull-left">商品清单</h4>
+          <p class="pull-right" id="back-to-trolley"><a>返回修改购物车</a></p>
+          <div id="book-list">
+            <table>
+              <tr class="thead">
+                <th>商品</th>
+                <th>价格</th>
+                <th>数量</th>
+                <th>库存状态</th>
+              </tr>
+              <tr class="data-row">
+                <td class="td-book"><img class="book-surface" src="/bookWebsite/image/book/1/1.jpg"><span class="book-name">这个是书的名字</span></td>
+                <td><span class="book-price">¥24.35</span></td>
+                <td>1</td>
+                <td>有货</td>
+              </tr>
+            </table>
+          </div>
+          <div id="booklist-price">
+            <p class="pull-right">总商品金额: <span class="goods-all-money">¥45.99</span></p>
+          </div>
+        </div>
+        <div id="info-submit">
+          <button class="btn btn-primary" id="submit-btn">提交订单</button>
+          <p>应付金额: <span class="all-money">¥50.50</span>元</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/bookWebsite/opensource/bootstrap/js/jquery.js"></script>
+    <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
+    <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/bookWebsite/js/common/header.js"></script>
+    <script src="/bookWebsite/js/common/isLogin.js"></script>
+    <script src="/bookWebsite/js/infoConfirm.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>购物车</title>
+
+    <link href="/bookWebsite/opensource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bookWebsite/opensource/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/bookWebsite/css/common/common.css" rel="stylesheet">
+    <link href="/bookWebsite/css/common/header.css" rel="stylesheet">
+    <link href="/bookWebsite/css/trolleyPage.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="logo">
+          东东网
+        </div>
+        <div id="header-list">
+          <ul>
+            <li class="header-list-item active" id="type-0">购物广场</li>
+            <li class="header-list-item" id="type-1">我的主页</li>
+          </ul>
+          <canvas id="header-triangle" width="120" height="10"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="procedure-part">
+        <div class="step-part active">
+          <div class="line"></div>
+          <div class="circle">1</div>
+          <p>我的购物车</p>
+        </div>
+        <div class="step-part">
+          <div class="line"></div>
+          <div class="circle">2</div>
+          <p>填写核对订单信息</p>
+        </div>
+        <div class="step-part">
+          <div class="line"></div>
+          <div class="circle">3</div>
+          <p>成功提交订单</p>
+        </div>
+      </div>
+      <div id="trolley-list">
+        <p class="thead">我的购物车</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th><input type="checkbox" name="all-choose" id="all-choose-checkbox" value="all-choose" checked> 全选</th>
+              <th>商品</th>
+              <th>价格</th>
+              <th>货存</th>
+              <th>数量</th>
+              <th>操作</th>
+            </tr>
+            <tr class="data-row">
+              <td><span><input type="checkbox" name="book1" id="book1-checkbox" class="book-checkbox" checked></span></td>
+              <td><img class="book-surface" src="/bookWebsite/image/book/1/1.jpg"><span class="book-name">这个是书的名字</span></td>
+              <td><span class="book-price">¥24.35</span></td>
+              <td><span>有货</span></td>
+              <td><span class="num-td"><input class="num-input" type="number" value="1"></span></td> 
+              <td><span><a class="book-delete" data-toggle="modal">删除</a></span></td>
+            </tr>
+            <tr class="data-row">
+              <td><span><input type="checkbox" name="book2" id="book2-checkbox" class="book-checkbox" checked></span></td>
+              <td><img class="book-surface" src="/bookWebsite/image/book/1/1.jpg"><span class="book-name">这个是书的名字</span></td>
+              <td><span class="book-price">¥24.35</span></td>
+              <td><span>有货</span></td>
+              <td><span class="num-td"><input class="num-input" type="number" value="1"></span></td> 
+              <td><span><a class="book-delete" data-toggle="modal">删除</a></span></td>
+            </tr>
+            <tr class="submit-row">
+              <td colspan="6">
+                <button class="btn btn-primary" id="submit-btn">结算</button>
+                <p>总价: <span class="all-price"></span></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- 确定要删除的确认框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">你确定要删除吗</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="confirm-delete">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/bookWebsite/opensource/bootstrap/js/jquery.js"></script>
+    <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
+    <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/bookWebsite/js/common/header.js"></script>
+    <script src="/bookWebsite/js/common/isLogin.js"></script>
+    <script src="/bookWebsite/js/trolleyPage.js"></script>
+
+  </body>
+</html>

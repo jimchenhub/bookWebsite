@@ -1,0 +1,52 @@
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background-image: url(/bookWebsite/image/index/background.jpg);
+  background-size: 100% auto;
+}
+
+#alpaca {
+  position: fixed;
+  left: 0px;
+  top: 200px;
+  width: 300px;
+}
+
+.logo {
+  margin-top: 100px;
+  color: #424242;
+  font-size: 80px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.propogation {
+  height: 40px;
+  margin: 0px;
+  line-height: 40px;
+  text-align: center;
+  color: #424242;
+  font-size: 24px;
+}
+
+#log-form {
+  float: left;
+  height: auto;
+  margin-top: 40px;
+  display: block;
+}
+
+#sign-form {
+  float: left;
+  height: auto;
+  margin-top: 40px;
+  display: none; 
+}
+
+#log-log-btn {
+  margin-top: 30px;
+}

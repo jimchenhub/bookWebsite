@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>充值界面</title>
+
+    <link href="/bookWebsite/opensource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bookWebsite/opensource/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/bookWebsite/css/common/common.css" rel="stylesheet">
+    <link href="/bookWebsite/css/common/header.css" rel="stylesheet">
+    <link href="/bookWebsite/css/recharge.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="logo">
+          东东网
+        </div>
+        <div id="header-list">
+          <ul>
+            <li class="header-list-item active" id="type-0">购物广场</li>
+            <li class="header-list-item" id="type-1">我的主页</li>
+          </ul>
+          <canvas id="header-triangle" width="120" height="10"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="col-xs-6 col-xs-offset-3" id="recharge-form">
+        <div class="form-group">
+          <p>选择要充值的金额</p>
+          <select class="form-control">
+            <option value="1">20</option>
+            <option value="2">50</option>
+            <option value="3">100</option>
+            <option value="4">200</option>
+            <option value="5">500</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>充值卡账号</p>
+          <input class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <p>充值卡密码</p>
+          <input class="form-control" type="password">
+        </div>
+        <div class="form-group">
+          <a class="btn btn-success btn-block" id="recharge-btn" data-toggle="modal">充值</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- 确定要充值的确认框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">你确定要充值吗</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="confirm-delete">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/bookWebsite/opensource/bootstrap/js/jquery.js"></script>
+    <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
+    <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/bookWebsite/js/common/header.js"></script>
+    <script src="/bookWebsite/js/common/isLogin.js"></script>
+    <script src="/bookWebsite/js/recharge.js"></script>
+
+  </body>
+</html>

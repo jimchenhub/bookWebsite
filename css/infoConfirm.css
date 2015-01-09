@@ -1,0 +1,147 @@
+/*=====procedure part======*/
+#procedure-part {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 10px 0px;
+}
+.step-part {
+  float: left;
+  width: 33.33333333%;
+  height: 50px;
+  padding-top: 20px;
+  color: #fff;
+}
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: #ccc;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  margin-left: 47%;
+  margin-top: -12px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #ccc;
+}
+.step-part p {
+  margin-top: 5px;
+  text-align: center;
+  color: #424242;
+}
+.step-part.active .line {
+  background-color: rgb(46,94,150);
+}
+.step-part.active .circle {
+  background-color: rgb(46,94,150);
+}
+/*========trolley part========*/
+#info-list {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin: 20px 0px;
+  border: 1px solid #ccc;
+}
+.info-head {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+}
+.info-head p {
+  color: #212121;
+  font-size: 20px;
+  margin: 0px;
+}
+/*basic info part*/
+.basic-info-part {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #fff; 
+  border-bottom: 1px solid #ccc;
+}
+.basic-info-part h4 {margin-bottom: 20px;}
+.basic-info-part p {
+  margin-left: 30px;
+  font-size: 14px;
+  color: #424242;
+}
+.change-info-btn {
+  font-size: 14px;
+}
+#address-form {display: none;}
+/*booklist*/
+#info-booklist {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #fff; 
+  border-bottom: 1px solid #ccc;
+}
+#back-to-trolley {
+  line-height: 40px;
+}
+#book-list {
+  float: left;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px dashed #aaa;
+}
+#book-list table {
+  width: 100%;
+}
+#book-list table .thead {
+  background-color: #eee;
+}
+#book-list table th {
+  padding: 10px;
+  text-align: center;
+  border-left: 1px solid #fff;
+}
+/*data row*/
+.data-row td {
+  padding: 10px;
+  text-align: center;
+}
+.data-row .td-book {
+  text-align: left;
+}
+.data-row img { cursor: default }
+.data-row .book-name {
+  padding-left: 20px;
+}
+.book-surface {
+  height: 100px;
+}
+#booklist-price {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+#booklist-price .goods-all-money { color: rgb(254,23,45) }
+#info-submit {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: #eee;
+}
+#info-submit>* { float: right }
+#info-submit button {
+  width: 120px;
+}
+#info-submit p {
+  line-height: 34px;
+  font-size: 18px;
+  margin: 0px 20px 0px 0px;
+}
+#info-submit .all-money { color: rgb(254,23,45) }

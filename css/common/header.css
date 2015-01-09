@@ -1,0 +1,43 @@
+#header {
+  float: left;
+  width: 100%;
+  height: 60px;
+  background-color: #424242;
+}
+
+/* logo */
+#logo {
+  float: left;
+  width: 25%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+/* header list */
+#header-list {
+  float: left;
+  width: 240px;
+  height: 60px;
+}
+#header-list ul { 
+  float: left;
+  padding: 0px;
+  margin: 0px;
+}
+.header-list-item {
+  float: left;
+  width: 120px;
+  height: 50px;
+  padding-top: 10px;
+  line-height: 40px;
+  text-align: center;
+  color: #aaa;
+  font-size: 18px;
+}
+.header-list-item.active {
+  color: #fafafa;
+}
+#header-triangle {float: left;}

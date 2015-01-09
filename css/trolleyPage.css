@@ -1,0 +1,92 @@
+/*=====procedure part======*/
+#procedure-part {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 10px 0px;
+}
+.step-part {
+  float: left;
+  width: 33.33333333%;
+  height: 50px;
+  padding-top: 20px;
+  color: #fff;
+}
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: #ccc;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  margin-left: 47%;
+  margin-top: -12px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #ccc;
+}
+.step-part p {
+  margin-top: 5px;
+  text-align: center;
+  color: #424242;
+}
+.step-part.active .line {
+  background-color: rgb(46,94,150);
+}
+.step-part.active .circle {
+  background-color: rgb(46,94,150);
+}
+/*========trolley part========*/
+#trolley-list {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 20px 0px;
+}
+#trolley-list .thead {
+  font-size: 20px;
+}
+#trolley-list table {
+  background-color: #eee;
+}
+.data-row {
+  height: auto;
+  background-color: #fff;
+}
+.data-row img { cursor: default }
+.data-row span {
+  line-height: 100px;
+}
+.data-row .num-td {
+  line-height: 24px;
+}
+.data-row .num-input {
+  width: 50px;
+  margin-top: 35px;
+  padding-left: 10px;
+}
+.data-row .book-name {
+  padding-left: 20px;
+}
+.book-surface {
+  height: 100px;
+}
+.submit-row p {
+  float: right;
+  width: auto;
+  padding: 0px 20px;
+  margin: 0px;
+  line-height: 50px;
+  font-size: 14px;
+}
+.all-price { 
+  margin-left: 10px;
+  font-size: 20px;
+  color: rgb(254,23,45);
+}
+#submit-btn {
+  float: right;
+  width: 120px;
+  margin: 10px 0px;
+}
