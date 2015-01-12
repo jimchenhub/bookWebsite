@@ -32,8 +32,71 @@
 
     <div class="container">
       <div id="left-part">
+        <ul>
+          <li id="info-btn" class="active">我的信息</li>
+          <li id="order-btn">我的订单</li>
+        </ul>
       </div>
       <div id="right-part">
+        <div id="info-part">
+          <h3>我的信息</h3>
+          <p class="tip">更改或填写对应的输入框内容以进行个人信息的修改</p>
+          <form class="col-xs-10">
+            <div class="form-group">
+              <p class="col-xs-2">姓名</p>
+              <div class="col-xs-10">
+                <input class="form-control" type="text" id="info-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="col-xs-2">原始密码</p>
+              <div class="col-xs-10">
+                <input class="form-control" type="password" id="info-password">
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="col-xs-2">新密码</p>
+              <div class="col-xs-10">
+                <input class="form-control" type="password" id="info-new-password">
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="col-xs-2">确认密码</p>
+              <div class="col-xs-10">
+                <input class="form-control" type="password" id="info-new-password-confirm">
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="col-xs-2">收货地址</p>
+              <div class="col-xs-10">
+                <input class="form-control" type="text" id="info-address">
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success btn-block" id="submit-btn" onClick="return false;">提交</button>
+            </div>
+          </form>
+        </div>
+        <div id="order-part">
+          <table class="table">
+            <tr>
+              <th>订单信息</th>
+              <th>订单金额</th>
+              <th>订单时间</th>
+              <th>订单状态</th>
+            </tr>
+            <tr class="order-row">
+              <td class="order-information">
+                <img class="book-surface" src="/bookWebsite/image/book/1/1.jpg"><span> &Chi;3</span>
+                <img class="book-surface" src="/bookWebsite/image/book/2/2.jpg"><span> &Chi;3</span>
+                <img class="book-surface" src="/bookWebsite/image/book/3/3.jpg"><span> &Chi;3</span>
+              </td>
+              <td><span class="order-money">¥50.50</span></td>
+              <td><span class="order-time">2015-12-23 12:23</span></td>
+              <td><span>已完成</span></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -41,6 +104,7 @@
     <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
     <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="/bookWebsite/js/common/md5.js"></script>
     <script src="/bookWebsite/js/common/header.js"></script>
     <script src="/bookWebsite/js/common/isLogin.js"></script>
     <script src="/bookWebsite/js/homePage.js"></script>

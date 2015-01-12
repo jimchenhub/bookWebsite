@@ -1,0 +1,145 @@
+/*========search part===========*/
+#search-part {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 20px 0px 10px 0px;
+}
+
+#search-input {
+  float: left;
+  width: 80%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#input-btn {
+  float: left;
+  width: 20%;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+#recommend-part {
+  float: left;
+  padding: 5px 0px 0px 0px;
+}
+#recommend-part span, #recommend-part ul {
+  float: left;
+  margin: 0px;
+}
+#recommend-part span {padding: 0px 5px 0px 0px;}
+#recommend-part li {
+  float: left;
+  padding: 0px 5px;
+}
+#recommend-part li:hover {color: rgb(254,23,45)}
+
+#specific-search {
+  float: left;
+  width: auto;
+  line-height: 34px;
+  cursor: pointer;
+}
+#specific-search:hover {color: #000;}
+
+#trolley-part {
+  float: left;
+  width: 200px;
+  height: auto;
+}
+#trolley-part .badge {
+  color: #fafafa;
+  background-color: rgb(254,23,45);
+}
+
+/*====sepecific search part=====*/
+#specific-search-part {
+  float: left;
+  width: 100%;
+  height: 0px;
+  background-color: #ddd;
+  box-shadow: 1px 1px 3px #aaa;
+  overflow: hidden;
+}
+#search-condition-form {
+  float: left;
+  margin: 30px 0px;
+}
+#search-condition-form .form-group {
+  height: 34px;
+  width: 100%;
+  float: left;
+  height: auto;
+  line-height: 34px;
+}
+.form-group p {
+  margin-bottom: 0px;
+  text-align: right;
+}
+#search-condition-form .col-xs-2 {padding: 0px;}
+#pub-date-part .col-xs-5, #pub-date-part .col-xs-1 {padding: 0px;}
+#pub-date-part .col-xs-1 {text-align: center;}
+#pub-date-part .col-xs-6 {padding: 0px 1px;}
+
+#specific-search-btn {
+  position: relative;
+  top: 230px;
+}
+
+/*===book-basic-info==*/
+#book-basic-info {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  padding: 20px 0px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #aaa;
+}
+#book-basic-info img {
+  max-width: 90%;
+  margin-left: 5%;
+}
+.info-name {
+  font-size: 24px;
+  color: #424242;
+}
+.info-author { color: rgb(17,70,143) }
+.info-price {
+  font-size: 18px;
+  color: rgb(254,23,45);
+}
+.info-num {
+  width: 50px;
+  padding-left: 10px;
+}
+#book-basic-info button {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#book-specific-info {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin: 20px 0px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #aaa;
+}
+#book-catalog {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+#book-catalog>p {
+  color: #111;
+  font-size: 22px;
+  text-shadow: 0px 0px 1px #aaa;
+}
+#book-catalog ul li {
+  padding: 10px 0px;
+  font-size: 18px;
+  color: #424242;
+}
+
+

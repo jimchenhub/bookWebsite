@@ -17,6 +17,11 @@ $(document).ready(function(){
             }
         }
     );
+
+    //进入购物车页面
+    $("#trolley-part button").click(function(){
+        location.href = "/bookWebsite/html/trolleyPage.html";
+    });
 });
 
 function updateTrolley(num){

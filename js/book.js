@@ -1,10 +1,6 @@
-var curPage = 1;
 $(document).ready(function(){
     //首先获取searchword，如果没有searchword则推出该页面
-    var searchWord = getCookie("searchWord");
-    if (searchWord == null || searchWord == ""){
-        location.href = "/bookWebsite/html/ground.html";
-    }
+    
 
     // 如果正常存在搜索的内容，就进行搜索
     // $.post(
@@ -34,7 +30,7 @@ $(document).ready(function(){
             jumpBookList(keyWord);
         }
     });
-
+    
     //点击热门搜索
     $("#recommend-part li").click(function(){
         var keyWord = $(this).text();
@@ -58,30 +54,6 @@ $(document).ready(function(){
 
     
 });
-
-//填充booklist
-function fillBookList(datas){
-    $("#book-list").empty();
-    for(var i = 0 ; i < 12; i++){
-        $("#book-list").append($('<div class="book-item">')
-            .append($('<div class="item-img">')
-                .append($('<img src="/bookWebsite/image/index/alpaca.jpg">')))
-            .append($('<div class="item-info">')
-                .append($('<p class="title">如何成为土豪</p>'))
-                .append($('<p class="price">价格: <span class="current-price">66.66</span> 元</p>'))
-                .append($('<hr>'))
-                .append($('<ul class="info-list">')
-                    .append($('<li>作者: <span class="author">刘家豪／吕泽华</span></li>'))
-                    .append($('<li>出版社: <span class="press">北京邮电出版社</span></li>'))
-                    .append($('<li>出版时间: <span class="date">2014-12-23</span></li>'))
-                    .append($('<li>库存: 剩余<span class="book-num">11</span>本</li>'))
-                    )
-                )
-            .append($('<div class="item-operation">')
-                .append($('<button class="btn btn-default">加入购物车</button>')))
-            );
-    }
-}
 
 //获取cookie值
 function getCookie(name) 
