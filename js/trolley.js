@@ -28,15 +28,3 @@ function updateTrolley(num){
     //更新购物车上的数量
     $("#trolley-part .badge").text(num);
 }
-
-//获取cookie值
-function getCookie(name) 
-{ 
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-    if(arr=document.cookie.match(reg)){
-        //return unescape(arr[2]); 
-        return decodeURIComponent(arr[2]); 
-    }else{ 
-        return null; 
-    }
-}

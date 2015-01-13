@@ -83,18 +83,6 @@ function fillBookList(datas){
     }
 }
 
-//获取cookie值
-function getCookie(name) 
-{ 
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-    if(arr=document.cookie.match(reg)){
-        //return unescape(arr[2]); 
-        return decodeURIComponent(arr[2]); 
-    }else{ 
-        return null; 
-    }
-}
-
 //进入booklist页面
 function jumpBookList(searchWord){
     searchWord = $.trim(searchWord); //去除输入框中两边的空格

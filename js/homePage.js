@@ -28,6 +28,11 @@ $(document).ready(function(){
         getOrderInfo(userId);
     });
 
+    //去充值
+    $("#recharge-btn").click(function(){
+        location.href = "/bookWebsite/html/recharge.html";
+    });   
+    
     //提交点击事件
     $("#submit-btn").click(function(){
         //如果地址为空，则需要提醒

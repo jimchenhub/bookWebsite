@@ -34,21 +34,21 @@
       <form class="col-xs-6 col-xs-offset-3" id="recharge-form">
         <div class="form-group">
           <p>选择要充值的金额</p>
-          <select class="form-control">
-            <option value="1">20</option>
-            <option value="2">50</option>
-            <option value="3">100</option>
-            <option value="4">200</option>
-            <option value="5">500</option>
+          <select class="form-control" id="money">
+            <option value="20.00">20</option>
+            <option value="50.00">50</option>
+            <option value="100.00">100</option>
+            <option value="200.00">200</option>
+            <option value="500.00">500</option>
           </select>
         </div>
         <div class="form-group">
           <p>充值卡账号</p>
-          <input class="form-control" type="text">
+          <input class="form-control" type="text" id="number">
         </div>
         <div class="form-group">
           <p>充值卡密码</p>
-          <input class="form-control" type="password">
+          <input class="form-control" type="password" id="password">
         </div>
         <div class="form-group">
           <a class="btn btn-success btn-block" id="recharge-btn" data-toggle="modal">充值</a>
