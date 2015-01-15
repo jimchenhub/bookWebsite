@@ -15,7 +15,7 @@ $mysqliObj->query("set name $charName"); //设置字符集
 
 //查询
 $userId = $_POST["userId"];
-$sql1 = "select uname, address from user_info where uid='".$userId."'";
+$sql1 = "select uname, address, grade from user_info where uid='".$userId."'";
 $result1 = $mysqliObj->query($sql1);
 
 if ($result1){
@@ -23,10 +23,12 @@ if ($result1){
         $row =$result1->fetch_array();
         $name = $row[0];
         $address = $row[1];
-            
+        $grade = $row[2];
+
         $res["res"] = "y";
         $res["name"] = $name;
         $res["address"] = $address;
+        $res["grade"] = $grade;
         
     }else {
         $res["res"] = "n";

@@ -31,7 +31,7 @@ $(document).ready(function(){
             if (datas.res == "n"){
                 alert(datas.msg);
             }else{
-                $(".pay-money").text("¥"+datas.money);
+                $(".pay-money").text("¥"+getPayMoney(datas.money));
             }
         }
     );
@@ -50,11 +50,54 @@ $(document).ready(function(){
             alert("余额不足，可以去充值来完成付款");
         }else {
             //进行购买
-            
-
-            
-            //购买完成 跳转到购物广场首页
-            location.href = "/bookWebsite/html/ground.html";
+            $.post(
+                '/bookWebsite/php/payMoney.php',
+                {
+                    userId : userId,
+                    payMoney : payMoney
+                },
+                function (data) //回传函数
+                {
+                    // alert(data);
+                    var datas = eval('(' + data + ')');
+                    if (datas.res == "n"){
+                        alert(datas.msg);
+                    }else{
+                        alert("付款成功");
+                        //购买完成 跳转到购物广场首页
+                        location.href = "/bookWebsite/html/ground.html";
+                    }
+                }
+            );
         }
     });
 });
+
+//根据用户等级调整价格
+function getPayMoney(sum){
+    var grade = getCookie("userGrade");
+
+    var payMoney;
+    switch(grade){
+        case "1" :
+            payMoney = sum * 0.9;
+            break;
+        case "2" :
+            payMoney = sum * 0.85;
+            break;
+        case "3" :
+            payMoney = sum * 0.85;
+            break;
+        case "4" :
+            payMoney = sum * 0.8;
+            break;
+        case "5" :
+            payMoney = sum * 0.75;
+            break;
+        default : 
+            payMoney = sum;
+            break;
+    }
+
+    return payMoney;
+}

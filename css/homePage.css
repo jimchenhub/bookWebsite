@@ -31,6 +31,13 @@
   border-bottom-left-radius: 5px;
 }
 
+#remain-money {
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+  color: #212121;
+  font-size: 16px;
+}
 #recharge-btn {
   width: 80%;
   margin-left: 10%;

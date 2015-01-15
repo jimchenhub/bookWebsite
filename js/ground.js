@@ -26,11 +26,11 @@ $(document).ready(function(){
         }
     });
 
-    //点击热门搜索
-    $("#recommend-part li").click(function(){
-        var keyWord = $(this).text();
-        jumpBookList(keyWord);
-    });
+    // //点击热门搜索
+    // $("#recommend-part li").click(function(){
+    //     var keyWord = $(this).text();
+    //     jumpBookList(keyWord);
+    // });
 
     //点击高级搜索出现更多输入框
     $("#specific-search").click(function(){

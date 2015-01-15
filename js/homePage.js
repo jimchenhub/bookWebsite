@@ -130,6 +130,7 @@ function fillUserInfoList(data){
     //设置内容
     $("#info-name").val(data.name);
     $("#info-address").val(data.address);
+    $("#remain-money").text("余额: ¥"+data.money);
     password = data.password;
 }
 

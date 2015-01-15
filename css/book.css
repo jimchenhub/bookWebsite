@@ -18,7 +18,7 @@
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
-#recommend-part {
+/*#recommend-part {
   float: left;
   padding: 5px 0px 0px 0px;
 }
@@ -31,7 +31,7 @@
   float: left;
   padding: 0px 5px;
 }
-#recommend-part li:hover {color: rgb(254,23,45)}
+#recommend-part li:hover {color: rgb(254,23,45)}*/
 
 #specific-search {
   float: left;
@@ -109,7 +109,7 @@
   color: rgb(254,23,45);
 }
 .info-num {
-  width: 50px;
+  width: 80px;
   padding-left: 10px;
 }
 #book-basic-info button {

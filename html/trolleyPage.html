@@ -103,6 +103,40 @@
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="lackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel2">订购缺货书目</h4>
+          </div>
+          <div class="modal-body">
+            <p>下面这些书已经缺货，你是否需要登记以订购呢？</p>
+            <div id="lack-list">
+              <!-- <div class="lack-book">
+                <div class="col-xs-1">
+                  <input type="checkbox" class="book-checkbox" checked>
+                </div>
+                <div class="col-xs-8">
+                  <img class="book-surface" src="/bookWebsite/image/book/1/1.jpg">
+                  <span class="book-name">这个是书的名字</span>
+                </div>
+                <div class="col-xs-3">
+                  <span class="book-num"> &Chi;10</span>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">不需要</button>
+            <button type="button" class="btn btn-info" id="some-lack-btn">订购勾选书目</button>
+            <button type="button" class="btn btn-primary" id="all-lack-btn">订购全部缺货书目</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="/bookWebsite/opensource/bootstrap/js/jquery.js"></script>
     <script src="/bookWebsite/opensource/jquery.cookie.js"></script>
     <script src="/bookWebsite/opensource/bootstrap/js/bootstrap.min.js"></script>

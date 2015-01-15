@@ -39,6 +39,16 @@ function updateSumMoney(){
     $(".all-price").text("¥"+sumMoney);
 }
 
+function updateInventory(dataRow){
+    var num = parseInt(dataRow.find(".num-input").val());
+    var inventoryString = dataRow.find(".book-inventory-num").text();
+
+    var inventory = parseInt(inventoryString.substring(1,inventoryString.length-1));
+
+    var isFull = num > inventory ? "缺货" : "有货";
+    dataRow.find(".book-inventory").text(isFull);
+}
+
 //更新页面
 function fillPage(data){
     //如果购物车里面没有东西 就直接显示没有东西
@@ -68,7 +78,7 @@ function fillPage(data){
             //.append($('<td><span><input type="checkbox" name="book1" id="book1-checkbox" class="book-checkbox" checked></span></td>'))
             .append($('<td><img class="book-surface" src="/bookWebsite/image/book/'+oneBook.envelope+'"><span class="book-name">'+oneBook.bname+'</span></td>'))
             .append($('<td><span class="book-price">¥'+oneBook.price+'</span></td>'))
-            .append($('<td><span>'+isFull+'</span></td>'))
+            .append($('<td><span class="book-inventory">'+isFull+'</span><span class="book-inventory-num">('+oneBook.inventory+')</span></td>'))
             .append($('<td><span class="num-td"><input class="num-input" type="number" value="'+oneBook.num+'"></span></td>'))
             .append($('<td><span><a class="book-delete" data-toggle="modal">删除</a></span></td>'))
             );
@@ -150,6 +160,7 @@ function fillPage(data){
                         alert(datas.msg);
                     }else{
                         updateSumMoney();
+                        updateInventory(dataRow); //修改是否有货
                     }
                 }
             ); 
@@ -193,7 +204,127 @@ function fillPage(data){
     });
 
     //结算按钮事件
-    $("#submit-btn").click(function(){
-        location.href = "/bookWebsite/html/infoConfirm.html";
+    $("#submit-btn").click(function(){  
+        //先确定是否有缺货，有缺货就需要记录缺货记录
+        $("#lack-list").empty();
+
+        var hasLack = false;
+        $(".data-row").each(function(index){
+            var isFull = $(this).find(".book-inventory").text();
+            if (isFull == "缺货"){
+                hasLack = true;
+                //添加lack book
+                var id = $(this).attr("id");
+                $("#lack-list").append($('<div class="lack-book" id="lack-'+id+'">')
+                    .append($('<div class="col-xs-1">')
+                        .append($('<input type="checkbox" class="book-checkbox" checked="checked">')))
+                    .append($('<div class="col-xs-8">')
+                        .append($('<img class="book-surface" src="'+$(this).find(".book-surface").attr("src")+'">'))
+                        .append($('<span class="book-name">'+$(this).find(".book-name").text()+'</span>')))
+                    .append($('<div class="col-xs-3">')
+                        .append($('<span class="book-num">&Chi;'+$(this).find(".num-input").val()+'</span>')))
+                    );
+                }
+        });
+
+        //如果有缺货
+        if (hasLack){
+            $("#lackModal").modal("show");
+
+            /*注册两个按钮的事件*/
+            //勾选订购
+            $("#some-lack-btn").click(function(){
+                var bnoList = new Array();
+                var bnameList = new Array();
+                var numList = new Array();
+
+                var counter = 0;
+
+                var allChoose = true;
+
+                $(".lack-book").each(function(index){
+                    var checked = $(this).find(".book-checkbox")[0].checked;
+                    if (checked){
+                        bnoList[counter] = $(this).attr("id").split("-")[2];
+                        bnameList[counter] = $(this).attr("id").split("-")[3];
+                        numList[counter] = parseInt($(this).find(".book-num").text().substr(1));
+                        counter++;
+                    }else {
+                        allChoose = false;
+                    }
+                });
+
+                var userId = getCookie("userId");
+                $.post(
+                    '/bookWebsite/php/addLackRecord.php',
+                    {
+                        userId : userId,
+                        bno : bnoList,
+                        bname : bnameList,
+                        num : numList
+                    },
+                    function (data) //回传函数
+                    {
+                        //alert(data);
+                        var datas = eval('(' + data + ')');
+                        if (datas.res == "n"){
+                            alert(datas.msg);
+                        }else{
+                            $("#lackModal").modal("hide");
+                            //如果全部删除了就可以直接进入下一个页面，否则就还需要对缺货的记录进行处理
+                            if (allChoose){
+                                location.href = "/bookWebsite/html/infoConfirm.html";
+                            }else {
+                                location.reload();
+                            }
+                            
+                        }
+                    }
+                );
+            });
+
+            //全部订购
+            $("#some-lack-btn").click(function(){
+                var bnoList = new Array();
+                var bnameList = new Array();
+                var numList = new Array();
+
+                var counter = 0;
+
+                $(".lack-book").each(function(index){
+                    bnoList[counter] = $(this).attr("id").split("-")[2];
+                    bnameList[counter] = $(this).attr("id").split("-")[3];
+                    numList[counter] = parseInt($(this).find(".book-num").text().substr(1));
+                    counter++;
+                });
+
+                var userId = getCookie("userId");
+                $.post(
+                    '/bookWebsite/php/addLackRecord.php',
+                    {
+                        userId : userId,
+                        bno : bnoList,
+                        bname : bnameList,
+                        num : numList
+                    },
+                    function (data) //回传函数
+                    {
+                        //alert(data);
+                        var datas = eval('(' + data + ')');
+                        if (datas.res == "n"){
+                            alert(datas.msg);
+                        }else{
+                            $("#lackModal").modal("hide");
+                            //直接进入下一个页面
+                            location.href = "/bookWebsite/html/infoConfirm.html";
+                        }
+                    }
+                );
+
+            });
+        }else{
+            //正常进入结算页面
+            location.href = "/bookWebsite/html/infoConfirm.html";    
+        }
     });
 }

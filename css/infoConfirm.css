@@ -144,4 +144,8 @@
   font-size: 18px;
   margin: 0px 20px 0px 0px;
 }
-#info-submit .all-money { color: rgb(254,23,45) }
+#info-submit .all-money {
+  color: #aaa;
+  text-decoration: line-through;
+}
+#info-submit .pay-money { color: rgb(254,23,45) }

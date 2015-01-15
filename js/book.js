@@ -39,11 +39,11 @@ $(document).ready(function(){
         }
     });
     
-    //点击热门搜索
-    $("#recommend-part li").click(function(){
-        var keyWord = $(this).text();
-        jumpBookList(keyWord);
-    });
+    // //点击热门搜索
+    // $("#recommend-part li").click(function(){
+    //     var keyWord = $(this).text();
+    //     jumpBookList(keyWord);
+    // });
 
     //点击高级搜索出现更多输入框
     $("#specific-search").click(function(){
@@ -107,10 +107,10 @@ function fillBookPage (book) {
     $("#book-basic-info .info-author").text(book.authorList[0].author);
     //设置价格
     $("#book-basic-info .info-price").text("¥"+book.price);
-    //设置价格
+    //设置出版社
     $("#book-basic-info .info-press").text(book.press);
-    //设置价格
-    $("#book-basic-info .info-date").text(book.date);
+    //设置出版时间
+    $("#book-basic-info .info-date").text(book.publishdate);
     //设置库存
     $("#book-basic-info .info-product").text(book.inventory);
     //设置目录

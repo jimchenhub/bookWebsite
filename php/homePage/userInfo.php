@@ -15,7 +15,7 @@ $mysqliObj->query("set name $charName"); //设置字符集
 
 //查询
 $userId = $_POST["userId"];
-$sql1 = "select uname, address from user_info where uid='".$userId."'";
+$sql1 = "select uname, address, money from user_info where uid='".$userId."'";
 $result1 = $mysqliObj->query($sql1);
 $sql2 = "select password from user where uid='".$userId."'";
 $result2 = $mysqliObj->query($sql2);
@@ -25,11 +25,12 @@ if ($result1 && $result2){
         $row =$result1->fetch_array();
         $name = $row[0];
         $address = $row[1];
-        $password = $row[2];
+        $money = $row[2];
             
         $res["res"] = "y";
         $res["name"] = $name;
         $res["address"] = $address;
+        $res["money"] = $money;
         
     }else {
         $res["res"] = "n";
