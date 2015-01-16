@@ -59,7 +59,11 @@ $(document).ready(function(){
             $(this).text("高级搜索");
         }
     });
-  
+
+    //高级搜索按钮
+    $("#specific-search-btn").click(function(){
+        jumpBookListAdvance();
+    });
 
     //加入购物车
     $("#add-to-trolley").click(function(){
@@ -104,7 +108,11 @@ function fillBookPage (book) {
     //设置书名
     $("#book-basic-info .info-name").text(book.bname);
     //设置作者
-    $("#book-basic-info .info-author").text(book.authorList[0].author);
+    var author = book.authorList[0].author;
+    for (var i = 1 ; i < book.authorList.length ; i++){
+        author = author+"，"+book.authorList[i].author;
+    }
+    $("#book-basic-info .info-author").text(author);
     //设置价格
     $("#book-basic-info .info-price").text("¥"+book.price);
     //设置出版社
@@ -117,11 +125,27 @@ function fillBookPage (book) {
     $("#book-catalog ul").append($(book.catalog));
 }
 
-//进入booklist页面
+//跳转到搜索结果页面
 function jumpBookList(searchWord){
     searchWord = $.trim(searchWord); //去除输入框中两边的空格
 
     $.cookie("searchWord", searchWord); //设置搜索的cookie
 
-    location.href = "/bookWebsite/html/bookList.html";
+    location.href = "/bookWebsite/html/bookList.html?advance=n";
+}
+
+//跳转到搜索结果页面（高级搜索）
+function jumpBookListAdvance(){
+    var name = $.trim($("#specific-name").val());
+    var author = $.trim($("#specific-author").val());
+    var press = $.trim($("#specific-press").val());
+    var priceMin = $("#specific-price-min").val();
+    var priceMax = $("#specific-price-max").val();
+
+    var yearMin = $("#specific-date-year-min").val();
+    var monthMin = $("#specific-date-month-min").val();
+    var yearMax = $("#specific-date-year-max").val();
+    var monthMax = $("#specific-date-month-max").val();
+    
+    location.href = "/bookWebsite/html/bookList.html?advance=y&name="+name+"&author="+author+"&press="+press+"&priceMin="+priceMin+"&priceMax="+priceMax+"&yearMin="+yearMin+"&monthMin="+monthMin+"&yearMax="+yearMax+"&monthMax="+monthMax;
 }

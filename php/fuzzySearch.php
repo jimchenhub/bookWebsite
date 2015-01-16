@@ -13,7 +13,6 @@ if(mysqli_connect_errno()){
 }
 $mysqliObj->query("set name $charName"); //设置字符集
 
-$userId = $_POST["userId"];
 $key = $_POST["searchWord"];
 $type = $_POST["type"];
 $page = $_POST["page"];

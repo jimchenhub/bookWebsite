@@ -47,6 +47,10 @@ $(document).ready(function(){
         }
     });
 
+    //高级搜索按钮
+    $("#specific-search-btn").click(function(){
+        jumpBookListAdvance();
+    });
 });
 
 function fillPage(datas){
@@ -87,7 +91,23 @@ function jumpBookList(searchWord){
 
     $.cookie("searchWord", searchWord); //设置搜索的cookie
 
-    location.href = "/bookWebsite/html/bookList.html";
+    location.href = "/bookWebsite/html/bookList.html?advance=n";
+}
+
+//跳转到搜索结果页面（高级搜索）
+function jumpBookListAdvance(){
+    var name = $.trim($("#specific-name").val());
+    var author = $.trim($("#specific-author").val());
+    var press = $.trim($("#specific-press").val());
+    var priceMin = $("#specific-price-min").val();
+    var priceMax = $("#specific-price-max").val();
+
+    var yearMin = $("#specific-date-year-min").val();
+    var monthMin = $("#specific-date-month-min").val();
+    var yearMax = $("#specific-date-year-max").val();
+    var monthMax = $("#specific-date-month-max").val();
+    
+    location.href = "/bookWebsite/html/bookList.html?advance=y&name="+name+"&author="+author+"&press="+press+"&priceMin="+priceMin+"&priceMax="+priceMax+"&yearMin="+yearMin+"&monthMin="+monthMin+"&yearMax="+yearMax+"&monthMax="+monthMax;
 }
 
 //跳转到书本信息页面
