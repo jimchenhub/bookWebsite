@@ -52,7 +52,11 @@ $(document).ready(function(){
                     if (datas.res == "n"){
                         alert(datas.msg);
                     }else{
-                        loginJump(datas.userId);
+                        if (datas.type == "0"){
+                            loginJump(datas.userId);
+                        }else {
+                            loginJumpManager();
+                        }
                     }
                 }
             );
@@ -130,11 +134,14 @@ $(document).ready(function(){
     });    
 });
 
-//登录成功后跳转
+//登录成功后跳转(用户)
 function loginJump(userId){
     $.cookie("userId", userId, {expires:1});
     
     location.href = "/bookWebsite/html/ground.html";
 }
 
-
+//登录成功后跳转(管理员)
+function loginJumpManager(){
+    location.href = "/bookWebsite/html/manager/managerPage.html";
+}

@@ -14,7 +14,7 @@ if(mysqli_connect_errno()){
 $mysqliObj->query("set name $charName"); //设置字符集
 
 //查询articles
-$sql = "select uid,email,password from user where email='".$_POST["email"]."'";
+$sql = "select uid,email,password,type from user where email='".$_POST["email"]."'";
 $result = $mysqliObj->query($sql);
 
 if ($result){
@@ -22,10 +22,12 @@ if ($result){
         $row =$result->fetch_array();
         $uid = $row[0];
         $password = $row[2];
+        $type = $row[3];
 
         if (md5($_POST["password"]) == $password){
             $res["res"] = "y";
             $res["userId"] = $uid;
+            $res["type"] = $type;
         }else {
             $res["res"] = "n";
             $res["msg"] = "密码错误";
