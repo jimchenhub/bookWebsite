@@ -14,6 +14,10 @@ $(document).ready(function(){
                 alert(datas.msg);
             }else{
                 $("#info-username").text(datas.name);
+                if (datas.address == "" || datas.address == null){
+                    alert("还未填写地址，去主页填写地址");
+                    location.href = "/bookWebsite/html/homePage.html";
+                }
                 $("#info-address").text(datas.address);
                 //设置用户等级decookie
                 $.cookie("userGrade", datas.grade);
